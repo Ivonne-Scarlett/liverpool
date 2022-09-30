@@ -6,7 +6,6 @@ export default function Home() {
   const [characters, setCharacters] = useState([])
    
   useEffect(() => {
-    const characters = {}
     getAllCharacters()
     .then(response => {
       setCharacters(response)
@@ -16,23 +15,7 @@ export default function Home() {
 
   return (
     <>
-     <div>
-        <div className="flex flex-wrap justify-evenly">   
-           
-          {
-            characters.map((item, index) => {
-              console.log('item',item)
-              return (   
-                <div key={index}>          
-                  <p>{item.id}</p>   
-                  <p>{item.name}</p>   
-                  <p>{item.species}</p>    
-                </div>
-              )
-            })
-          } 
-        </div>
-     </div>
+     
     </>
   )
 }
