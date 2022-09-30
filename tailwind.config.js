@@ -12,6 +12,10 @@ module.exports = {
         'grayDark': '#2A2729',
         'grayLight': '#736B70',
       },
+      backgroundImage: {
+        'femaleIndex': "url('/img/female.jpg')",
+        'maleIndex': "url('/img/male.jpeg')",
+      },
     },
   },
   plugins: [],

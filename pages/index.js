@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import Nav from "../components/Nav.jsx";
-import CardProduct from "../components/CardProduct.jsx";
+import Nav from "../components/Nav.jsx"
+import CardProduct from "../components/CardProduct.jsx"
+import CategoryIndex from "../components/CategoryIndex.jsx"
 
 import {getAllCharacters} from '../lib/api'
 
@@ -54,6 +55,7 @@ export default function Home() {
       <main>
         { filtered && <CardProduct allProducts={filtered} />}
         { !filtered && <CardProduct allProducts={characterIndex} /> }
+        <CategoryIndex />
       </main>
       
       
