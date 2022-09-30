@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className='my-4 md:my-12 mx-8 grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4'>
-        <CardProduct />
-      </div>
+      
+      <CardProduct allProducts={characters} />
+      
       
     </>
   )
