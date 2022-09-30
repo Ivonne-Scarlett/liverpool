@@ -3,3 +3,5 @@
 
 2: npx tailwindcss init -p
 
+3: npm install classnames
+

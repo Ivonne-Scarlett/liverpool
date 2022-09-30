@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'pinkLiverpool': '#E821A6',
+        // 'pinkLiverpool': '#CC0F74',
+        'pinkLiverpool': '#D3137A',
         'grayDark': '#2A2729',
         'grayLight': '#736B70',
       },
