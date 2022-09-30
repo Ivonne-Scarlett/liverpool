@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import SearchByName from "./SearchByName";
 
 
-export default function Nav() {
+export default function Nav({ onChange, value, onClick }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const showMenu = () => {
     setMenuOpen(!isMenuOpen)
@@ -63,7 +63,11 @@ export default function Nav() {
           </div>
         </div>
         <div className="mt-2">
-          <SearchByName />
+          <SearchByName 
+            onChange={onChange}
+            value={value}
+            onClick={onClick}
+           />
         </div>
       </div>
 
@@ -74,7 +78,11 @@ export default function Nav() {
             <img src='/icon/logoLiverp.jpg' alt='logotipo' className='h-[35px] sm:h-[40px]' />
           </div>
           <div className="w-1/2 mt-3">
-            <SearchByName />
+            <SearchByName 
+              onChange={onChange}
+              value={value}
+              onClick={onClick}
+            />
           </div>
           <div className="flex flex-row justify-end items-center">
             <div className="mx-4">

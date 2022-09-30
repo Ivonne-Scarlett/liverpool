@@ -3,15 +3,15 @@ import classNames from 'classnames'
 import { useRouter } from 'next/router'
 
 export default function CardProduct({ allProducts }) {
-  console.log('allProd', allProducts)
+  // console.log('allProd', allProducts)
   return (
     <>
       <div className='my-8 sm:my-12 mx-4 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7'>
         {
           allProducts.map((item, index) => {
-            console.log('item', item)
+            // console.log('item', item)
             return (
-              <div key={index} className='flex flex-col border-2 border-slate-100'>
+              <div key={index} className='flex flex-col border-2 border-slate-100 cursor-pointer'>
                 <div className='m-4'>
                   <img src={item.image} alt='product'/>
                 </div>
