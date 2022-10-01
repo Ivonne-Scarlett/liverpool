@@ -4,7 +4,6 @@ import Link from "next/link";
 import classNames from 'classnames';
 import SearchByName from "./SearchByName";
 
-
 export default function Nav({ onChange, value, onClick }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const showMenu = () => {

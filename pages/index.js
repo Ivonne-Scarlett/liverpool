@@ -6,6 +6,7 @@ import CategoryIndex from "../components/CategoryIndex.jsx"
 import ImagesLiverpool from "../components/ImagesLiverpool.jsx"
 import Footer from "../components/Footer.jsx"
 
+import Head from 'next/head';
 import {getAllCharacters} from '../lib/api'
 
 
@@ -50,6 +51,14 @@ export default function Home() {
  
   return (
     <>
+      <Head>
+        <meta name="description" content="La tienda número 1 de México en ventas"></meta>
+        <meta name='keywords' content='compras ropa accesorios e-commerce tecnología hogar joyería' />
+        <meta name="author" content="Ivonne Chavez"></meta>
+        <meta name="revised" content="02/10/2022"></meta>
+        <link rel='short icon' href='/favicon.jpg' />
+        <title>Liverpool es parte de Mi vida</title>
+      </Head>
       <Nav 
         value={inputValue}
         onChange={handlerChangeInput} 
@@ -60,9 +69,7 @@ export default function Home() {
         <CategoryIndex />
         <ImagesLiverpool />
       </main>
-      <Footer />
-      
-      
+      <Footer />     
     </>
   )
 }

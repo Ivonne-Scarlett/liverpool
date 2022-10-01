@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import classNames from 'classnames'
+import React from 'react'
 import { useRouter } from 'next/router'
 
 export default function CardProduct({ allProducts }) {
-
   const router = useRouter()
   return (
     <>
       <div className='my-8 sm:my-12 mx-4 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7'>
         {
           allProducts.map((item, index) => {
-            // console.log('item', item)
             return (
               <div 
-                className='flex flex-col border-2 border-slate-100 cursor-pointer'
+                className='flex flex-col cursor-pointer'
                 key={index} 
                 onClick={() => router.push(`/product/${item.id}`)}                
               >

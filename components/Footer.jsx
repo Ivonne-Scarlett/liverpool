@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <>
+    <footer>
       <div className='mt-4 bg-grayFooter text-white'>
         {/* mobile */}
         <div className='block md:hidden '>
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </>
+    </footer>
   )
 }
  
