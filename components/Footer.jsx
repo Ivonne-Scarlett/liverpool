@@ -23,13 +23,13 @@ export default function Footer() {
           <p className='text-center mb-6 text-sm'>
             Contacto vía <span className='text-pinkLiverpool'>Whatsapp</span> o por Teléfono 5552629999
           </p>
-          <div className='bg-gray-400 h-1 w-full'>
+          <div className='bg-gray-400 h-0.5 w-full'>
           </div>
           <p className='text-center mb-2 mt-6 text-sm'>Comentarios y sugerencias: atención@liverpool.com.mx</p>
           <p className='text-center pb-8 text-sm'>Terminos y condiciones</p>
         </div>
         {/* desktop */}
-        <div className='hidden md:block'>
+        <div className='hidden md:block'> 
           <div className='flex flex-row'>
             <div className='bg-grayFooter w-3/5 flex flex-row justify-between text-xs ml-8 mr-16'>
               <div className='pt-12'>
@@ -62,7 +62,7 @@ export default function Footer() {
               </div>
             </div>
             <div className='bg-grayLiverpool w-2/5'>
-              <div className='flex flex-row justify-start w-full ml-14'>
+              <div className='flex flex-row justify-start ml-14'>
                 <button className='border-2 border-gray-400 w-3/4 mt-12'>
                   Suscribete a nuestro Newsletter
                 </button>

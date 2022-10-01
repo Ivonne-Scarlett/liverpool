@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import { useRouter } from 'next/router'
 
 export default function CardProduct({ allProducts }) {
-  // console.log('allProd', allProducts)
+
+  const router = useRouter()
   return (
     <>
       <div className='my-8 sm:my-12 mx-4 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7'>
@@ -11,7 +12,11 @@ export default function CardProduct({ allProducts }) {
           allProducts.map((item, index) => {
             // console.log('item', item)
             return (
-              <div key={index} className='flex flex-col border-2 border-slate-100 cursor-pointer'>
+              <div 
+                className='flex flex-col border-2 border-slate-100 cursor-pointer'
+                key={index} 
+                onClick={() => router.push(`/product/${item.id}`)}                
+              >
                 <div className='m-4'>
                   <img src={item.image} alt='product'/>
                 </div>

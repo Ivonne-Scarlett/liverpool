@@ -22,7 +22,7 @@ export default function Home() {
       const itemsIndexInicial = itemsIndexTotal - 12
       const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
       setCharacterIndex(dataIndexItems)
-      console.log(characterIndex)
+      //console.log(characterIndex)
     }) 
   }, [])
 
