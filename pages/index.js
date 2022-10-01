@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Nav from "../components/Nav.jsx"
 import CardProduct from "../components/CardProduct.jsx"
 import CategoryIndex from "../components/CategoryIndex.jsx"
+import ImagesLiverpool from "../components/ImagesLiverpool.jsx"
 
 import {getAllCharacters} from '../lib/api'
 
@@ -56,6 +57,7 @@ export default function Home() {
         { filtered && <CardProduct allProducts={filtered} />}
         { !filtered && <CardProduct allProducts={characterIndex} /> }
         <CategoryIndex />
+        <ImagesLiverpool />
       </main>
       
       
