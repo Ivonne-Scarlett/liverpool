@@ -47,6 +47,8 @@ export default function Home() {
     }   
     !valueInput ? setFiltered(null) : setFiltered(filterResult)
   }
+
+  
   
  
   return (
