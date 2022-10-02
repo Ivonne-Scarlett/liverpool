@@ -3,6 +3,7 @@ import { initFirebase} from '../firebase/firebaseApp'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter} from 'next/router'
+import Head from 'next/head';
 import Loader from "../components/Loader.jsx"
 
 export default function signGoogle() {
@@ -29,6 +30,14 @@ export default function signGoogle() {
 
   return (
     <>
+      <Head>
+        <meta name="description" content="Compra en línea y si tu tienda tiene el producto, recógelo 2 horas después en C&C."></meta>
+        <meta name='keywords' content='compras ropa accesorios e-commerce tecnología hogar joyería' />
+        <meta name="author" content="Ivonne Chavez"></meta>
+        <meta name="revised" content="02/10/2022"></meta>
+        <link rel='short icon' href='/favicon.jpg' />
+        <title>Liverpool es parte de Mi vida</title>
+      </Head>
       <div className="bg-pinkLiverpool">
           <div className="flex flex-row justify-between items-center mx-4">
             <div>

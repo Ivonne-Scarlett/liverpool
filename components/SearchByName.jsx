@@ -3,6 +3,9 @@ import classNames from 'classnames';
 import Image from 'next/image'
 
 export default function SearchByArtist({ onChange, value, onClick }) {
+  const handlerOnClick = event => {
+    event.preventDefault()
+  }
   return (
     <>
       <div className='bg-pinkLiverpool flex flex-row justify-center'>
@@ -27,7 +30,7 @@ export default function SearchByArtist({ onChange, value, onClick }) {
             'bg-white',
             'px-2 pt-1 rounded-r-lg',
             )}
-            onClick={onClick}
+            onClick={handlerOnClick}
             >
               <Image src='/icon/lupa.png' alt='lupa' height='20px' width='20px'/>
           </button>
