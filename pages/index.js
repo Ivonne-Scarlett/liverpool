@@ -5,26 +5,35 @@ import CardProduct from "../components/CardProduct.jsx"
 import CategoryIndex from "../components/CategoryIndex.jsx"
 import ImagesLiverpool from "../components/ImagesLiverpool.jsx"
 import Footer from "../components/Footer.jsx"
+import Head from "next/head"
 
-import Head from 'next/head';
 import {getAllCharacters} from '../lib/api'
+import {useRouter} from "next/router"
 
 
 export default function Home() {
+  const router = useRouter()
+
+  // useEffect(() => {
+  //   const token = sessionStorage.getItem('Token')
+  //   if (!token){
+  //     router.push('/login')
+  //   }
+  // }, [])
 
   const [characters, setCharacters] = useState([])  
   const [characterIndex, setCharacterIndex] = useState([])
 
   useEffect(() => {
-    getAllCharacters()
-    .then(response => {
-      setCharacters(response)
-      const itemsIndexTotal = response.length
-      const itemsIndexInicial = itemsIndexTotal - 12
-      const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
-      setCharacterIndex(dataIndexItems)
-      //console.log(characterIndex)
-    }) 
+      getAllCharacters()
+      .then(response => {
+        setCharacters(response)
+        const itemsIndexTotal = response.length
+        const itemsIndexInicial = itemsIndexTotal - 12
+        const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
+        setCharacterIndex(dataIndexItems)
+        //console.log(characterIndex)
+      }) 
   }, [])
 
 

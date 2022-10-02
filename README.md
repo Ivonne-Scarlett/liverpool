@@ -5,3 +5,4 @@
 
 3: npm install classnames
 
+4: npm install firebase
