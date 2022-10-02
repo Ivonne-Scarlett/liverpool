@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from "next/link"
 import { initFirebase} from '../firebase/firebaseApp'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter} from 'next/router'
+import Loader from "../components/Loader.jsx"
 
 export default function signGoogle() {
 
@@ -13,9 +13,8 @@ export default function signGoogle() {
   const [user, loading] = useAuthState(auth)
   const router = useRouter()
 
-
   if (loading) {
-    return <div>Loading ...</div>
+    return <Loader />
   }
 
   if (user) {
@@ -29,17 +28,22 @@ export default function signGoogle() {
   }
 
   return (
-    <div className="text-center flex flex-col gap-4 items-center">
-      <div>Please sign in to continue</div>
-      <button
-        onClick={signIn}
-      >      
-        <div className="bg-blue-600 text-white rounded-md p-2 w-48">Sign In</div>
-
-        {/* <Link href="/">
-          <a className="bg-blue-600 text-white rounded-md p-2 w-48">Sign In</a>
-        </Link> */}
-      </button>
-    </div>
+    <>
+      <div className="bg-pinkLiverpool">
+          <div className="flex flex-row justify-between items-center mx-4">
+            <div>
+              <img src='/icon/logoLiverp.jpg' alt='logotipo' className='h-[35px] sm:h-[40px]' />
+            </div>
+          </div>
+      </div>
+      <h4 className='text-center mt-4 md:mt-12 font-bold'>Por favor registrate con tu cuenta de Google para continuar</h4>
+      <div className="text-center flex flex-col items-center">        
+        <button
+          onClick={signIn}
+        >      
+          <div className="bg-pinkLiverpool text-white rounded p-2 w-48 mt-8 md:mt-16">Registrar</div>
+        </button>
+      </div>
+    </>
   )
 }

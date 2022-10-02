@@ -13,13 +13,14 @@ import {getAllCharacters} from '../lib/api'
 
 export default function Home() {
 
+
   const [characters, setCharacters] = useState([])  //Almacenamiento de todos los caracteres
   const [characterIndex, setCharacterIndex] = useState([]) //Almacenamiento de los últimos 12 items
-  const [loading, setLoading] = useState(false)
+  const [loaderFigure, setLoaderFigure] = useState(false)  //Para mostrar spinner al cargar la pagina
 
   
   useEffect(() => {
-    setLoading(true)
+    setLoaderFigure(true)
     getAllCharacters()
     .then(response => {
       setCharacters(response)
@@ -27,9 +28,10 @@ export default function Home() {
       const itemsIndexInicial = itemsIndexTotal - 12
       const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
       setCharacterIndex(dataIndexItems) //Traer los últimos 12 items
-      setLoading(false)
+      setLoaderFigure(false)
     }) 
   }, [])
+
 
   const [inputValue, setInputValue]= useState([]); //Guardar datos del Search
   const [filtered, setFiltered] = useState(null); //Guarda los datos filtrados
@@ -66,9 +68,9 @@ export default function Home() {
         onChange={handlerChangeInput} 
       />
       <main>
-        { loading && <Loader />}
-        { filtered && <CardProduct loading={loading} allProducts={filtered} />}
-        { !filtered && <CardProduct loading={loading} allProducts={characterIndex} /> }
+        { loaderFigure && <Loader />}
+        { filtered && <CardProduct allProducts={filtered} />}
+        { !filtered && <CardProduct allProducts={characterIndex} /> }
         <CategoryIndex />
         <ImagesLiverpool />
       </main>
