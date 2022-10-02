@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import Image from 'next/image'
-import Link from "next/link";
-import classNames from 'classnames';
-import SearchByName from "./SearchByName";
+import Link from "next/link"
+import classNames from 'classnames'
+import SearchByName from "./SearchByName"
+import ButtonSignUp from './ButtonSignUp'
 
 export default function Nav({ onChange, value, onClick }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -97,13 +98,10 @@ export default function Nav({ onChange, value, onClick }) {
                   Hombres
                 </button>
               </Link>
-            </div>
-            <div className="mx-4">
-              <Link href={"/login"}>
-                <button className="text-white">
-                  Salir
-                </button>
-              </Link>
+            </div>            
+            <div className="mx-4">   
+              {/* Boton para cerrar sesión de Google Auth */}           
+              <ButtonSignUp />              
             </div>
           </div>
         </div>

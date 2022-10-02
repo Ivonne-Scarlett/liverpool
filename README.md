@@ -10,6 +10,8 @@ esto compilará la aplicación e iniciará el servidor Next.js.
 b) Paquetes utilizados:
 1.- npm install -D tailwindcss postcss autoprefixer
 2.- npm install classnames
+3.- npm install firebase
+4.- npm install react-firebase-hooks
 
 c) Contiene las siguientes rutas/puntos finales:
 /                 pagina principal, se muestran 12 productos
