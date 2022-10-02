@@ -20,16 +20,16 @@ export default function Nav({ onChange, value, onClick }) {
               <Image src='/icon/menu.png' alt='menu' height='15px' width='15px'/>
             </button>
           </div>
-          <div className={classNames(
+          {/* <div className={classNames(
             "w-full block",
             isMenuOpen ? "block" : "hidden"
-          )}>
+          )}> */}
             {/* botones en Mobile */}
-            <div className={classNames(
+            {/* <div className={classNames(
               "text-sm",
               "bg-white",
               "shadow-2xl shadow-slate-400",
-              "h-1/4 w-full absolute",
+              "h-1/4 w-1/2 absolute",
             )}>
               <div className="flex flex-col justify-evenly items-left h-full">
                 <div>
@@ -48,7 +48,7 @@ export default function Nav({ onChange, value, onClick }) {
                 </div>              
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="mt-1">
             {/* <Image src='/icon/logoDesktop.png' alt='logotipo' height='40px' width='80px' /> */}
             <img src='/icon/logoLiverp.jpg' alt='logotipo' className='h-[35px] sm:h-[40px]'/>

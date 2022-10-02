@@ -5,6 +5,7 @@ import CardProduct from "../components/CardProduct.jsx"
 import CategoryIndex from "../components/CategoryIndex.jsx"
 import ImagesLiverpool from "../components/ImagesLiverpool.jsx"
 import Footer from "../components/Footer.jsx"
+import Loader from "../components/Loader.jsx"
 
 import Head from 'next/head';
 import {getAllCharacters} from '../lib/api'
@@ -14,8 +15,10 @@ export default function Home() {
 
   const [characters, setCharacters] = useState([])  
   const [characterIndex, setCharacterIndex] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     getAllCharacters()
     .then(response => {
       setCharacters(response)
@@ -23,10 +26,9 @@ export default function Home() {
       const itemsIndexInicial = itemsIndexTotal - 12
       const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
       setCharacterIndex(dataIndexItems)
-      //console.log(characterIndex)
+      setLoading(false)
     }) 
   }, [])
-
 
   const [inputValue, setInputValue]= useState([]);
   const [filtered, setFiltered] = useState(null);
@@ -47,12 +49,11 @@ export default function Home() {
     }   
     !valueInput ? setFiltered(null) : setFiltered(filterResult)
   }
-  
  
   return (
     <>
       <Head>
-        <meta name="description" content="La tienda número 1 de México en ventas"></meta>
+        <meta name="description" content="Compra en línea y si tu tienda tiene el producto, recógelo 2 horas después en C&C."></meta>
         <meta name='keywords' content='compras ropa accesorios e-commerce tecnología hogar joyería' />
         <meta name="author" content="Ivonne Chavez"></meta>
         <meta name="revised" content="02/10/2022"></meta>
@@ -64,8 +65,9 @@ export default function Home() {
         onChange={handlerChangeInput} 
       />
       <main>
-        { filtered && <CardProduct allProducts={filtered} />}
-        { !filtered && <CardProduct allProducts={characterIndex} /> }
+        { loading && <Loader />}
+        { filtered && <CardProduct loading={loading} allProducts={filtered} />}
+        { !filtered && <CardProduct loading={loading} allProducts={characterIndex} /> }
         <CategoryIndex />
         <ImagesLiverpool />
       </main>
