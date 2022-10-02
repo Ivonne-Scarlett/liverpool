@@ -5,7 +5,7 @@ export default function CardProduct({ allProducts }) {
   const router = useRouter()
   return (
     <>
-      <div className='my-8 sm:my-12 mx-4 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7'>
+      <div className='my-8 sm:my-12 mx-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-7'>
         {
           allProducts.map((item, index) => {
             return (
