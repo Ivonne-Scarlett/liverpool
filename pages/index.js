@@ -35,6 +35,7 @@ export default function Home() {
   const [filtered, setFiltered] = useState(null); //Guarda los datos filtrados
 
   const handlerChangeInput= (event) => {
+    event.preventDefault()
     const valueInput = event.target.value
     const datavalueInput = valueInput.toLowerCase()
     setInputValue(datavalueInput)
