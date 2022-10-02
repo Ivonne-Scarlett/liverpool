@@ -53,6 +53,7 @@ export default function id(data) {
       <h2 className='mt-4 md:mt-8 text-center text-4xl text-pinkLiverpool'>
         DETALLE DEL PRODUCTO
       </h2>
+      {/* Card que contiene el detalle del producto */}
       <div className="mt-4 flex justify-center">
         <div className='flex flex-col'>
           <div className='m-4'>

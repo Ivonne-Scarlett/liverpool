@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <div className='mt-4 bg-grayFooter text-white'>
-        {/* mobile */}
+        {/* Diseño mobile */}
         <div className='block md:hidden '>
           <div className='pt-4 ml-4'>
             <ol>
@@ -28,7 +28,7 @@ export default function Footer() {
           <p className='text-center mb-2 mt-6 text-sm'>Comentarios y sugerencias: atención@liverpool.com.mx</p>
           <p className='text-center pb-8 text-sm'>Terminos y condiciones</p>
         </div>
-        {/* desktop */}
+        {/* Diseño desktop */}
         <div className='hidden md:block'> 
           <div className='flex flex-row'>
             <div className='bg-grayFooter w-3/5 flex flex-row justify-between text-xs ml-8 mr-16'>

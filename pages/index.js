@@ -13,10 +13,11 @@ import {getAllCharacters} from '../lib/api'
 
 export default function Home() {
 
-  const [characters, setCharacters] = useState([])  
-  const [characterIndex, setCharacterIndex] = useState([])
+  const [characters, setCharacters] = useState([])  //Almacenamiento de todos los caracteres
+  const [characterIndex, setCharacterIndex] = useState([]) //Almacenamiento de los últimos 12 items
   const [loading, setLoading] = useState(false)
 
+  
   useEffect(() => {
     setLoading(true)
     getAllCharacters()
@@ -25,13 +26,13 @@ export default function Home() {
       const itemsIndexTotal = response.length
       const itemsIndexInicial = itemsIndexTotal - 12
       const dataIndexItems = response.slice(itemsIndexInicial, itemsIndexTotal)
-      setCharacterIndex(dataIndexItems)
+      setCharacterIndex(dataIndexItems) //Traer los últimos 12 items
       setLoading(false)
     }) 
   }, [])
 
-  const [inputValue, setInputValue]= useState([]);
-  const [filtered, setFiltered] = useState(null);
+  const [inputValue, setInputValue]= useState([]); //Guardar datos del Search
+  const [filtered, setFiltered] = useState(null); //Guarda los datos filtrados
 
   const handlerChangeInput= (event) => {
     const valueInput = event.target.value

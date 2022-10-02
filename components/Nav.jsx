@@ -12,7 +12,7 @@ export default function Nav({ onChange, value, onClick }) {
 
   return (
     <nav className="w-full">
-      {/* mobile */}
+      {/* diseño mobile */}
       <div className="bg-pinkLiverpool block md:hidden h-12">
         <div className="flex flex-row justify-between items-center mx-4">
           <div className="mt-3">
@@ -70,7 +70,7 @@ export default function Nav({ onChange, value, onClick }) {
         </div>
       </div>
 
-      {/* Desktop */}
+      {/* Diseño Desktop */}
       <div className="bg-pinkLiverpool hidden md:block h-14 xl:20">
         <div className="flex flex-row justify-between items-center mx-4">
           <div>
