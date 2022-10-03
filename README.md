@@ -1,14 +1,14 @@
 ## Pasos para ejecutar el repositorio en local:
-- 1. Instale Node.js y npm desde https://nodejs.org 
-- 2. Clone el código fuente del proyecto Next.js desde https://github.com/Ivonne-Scarlett/liverpool.git
-- 3. Instale todos los paquetes npm necesarios ejecutando 'npm install' o 'npm i' desde la línea de comando en la carpeta raíz del proyecto (donde se encuentra el paquete.json).
-- 4. Inicie la aplicación con el comando 'npm run dev' desde la línea de comando en la carpeta raíz del proyecto, esto compilará la aplicación e iniciará el servidor Next.js.
-- 5. Una vez que reciba el mensaje succesfull abra la aplicación en la URL http://localhost:3000.
+1. Instale Node.js y npm desde https://nodejs.org 
+2. Clone el código fuente del proyecto Next.js desde https://github.com/Ivonne-Scarlett/liverpool.git
+3. Instale todos los paquetes npm necesarios ejecutando 'npm install' o 'npm i' desde la línea de comando en la carpeta raíz del proyecto (donde se encuentra el paquete.json).
+4. Inicie la aplicación con el comando 'npm run dev' desde la línea de comando en la carpeta raíz del proyecto, esto compilará la aplicación e iniciará el servidor Next.js.
+5. Una vez que reciba el mensaje succesfull abra la aplicación en la URL http://localhost:3000.
 
 
 ## Versiones usadas:
-node: v16.13.2
-npm: 8.14.0
+- node: v16.13.2
+- npm: 8.14.0
 
 
 ## Paquetes utilizados:
@@ -19,10 +19,10 @@ npm: 8.14.0
 
 
 ## Contiene las siguientes rutas/puntos finales:
-/                 pagina principal, se muestran 12 productos
-/product/[id]     detalle de productos
-404               page not found
-signGoogle        autenticación con popUp de Google
+- / : pagina principal, se muestran 12 productos
+- /product/[id] : detalle de productos
+- 404 : page not found
+- signGoogle :autenticación con popUp de Google
 
 
 ## Estructura del proyecto:
