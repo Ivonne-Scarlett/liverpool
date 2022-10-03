@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { initFirebase} from '../firebase/firebaseApp'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -6,26 +6,34 @@ import { useRouter} from 'next/router'
 import Head from 'next/head';
 import Loader from "../components/Loader.jsx"
 
-export default function signGoogle() {
+export default function signGoogle() { 
 
+  // Autenticación con Google
   const app = initFirebase()
   const provider = new GoogleAuthProvider()
-  const auth = getAuth()
-  const [user, loading] = useAuthState(auth)
-  const router = useRouter()
+  const auth = getAuth()  
 
+  //Función requerida por la actualización de react v.18.2.0
+  //Requiere hooks personalizados implementados adentro de una función
+  function useAutGoogle() {
+    const [user, loading] = useAuthState(auth)  
+    const router = useRouter()
+    return (user, router)
+  }
+
+  //Spiner que se muestra al cargar la página 
   if (loading) {
     return <Loader />
   }
 
+  //user contine la información de Google Autentication (token) 
   if (user) {
     router.push('/')
-    return <div>welcome {user.displayName}</div>
   }
 
+  //función para ingresar con popUp de Google
   const signIn = async () => {
     const result = await signInWithPopup(auth, provider)
-    console.log(result.user)
   }
 
   return (
