@@ -26,9 +26,9 @@ export default function Home() {
   const router = useRouter()
   
   useEffect(() => {
-    if (!user) {    
-      router.push('/signGoogle') //En caso de no estar logueado redirecciona al login
-    }
+    // if (!user) {    
+    //   router.push('/signGoogle') //En caso de no estar logueado redirecciona al login
+    // }
     setLoaderFigure(true)
     getAllCharacters()
     .then(response => {
